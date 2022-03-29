@@ -520,3 +520,21 @@ h3 {
 .icon-link {
   position: relative;
 }
+
+/* 省略 */
+ 
+#skills {
+  padding: 128px 0;
+  clear: both;
+}
+
+.heading {
+ margin-bottom: 32px;
+ text-align: center;
+}
+
+.skills-container {
+ display: flex;
+ flex-wrap: wrap;
+ text-align: center;
+}
