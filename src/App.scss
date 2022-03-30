@@ -538,6 +538,11 @@ h3 {
  display: flex;
  flex-wrap: wrap;
  text-align: center;
+ justify-content: center;
+}
+
+.skill-item {
+  margin: 0 30px;
 }
 
 /* 省略 */
