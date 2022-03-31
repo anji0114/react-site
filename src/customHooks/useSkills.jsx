@@ -19,7 +19,8 @@ export const useSkills = () => {
         dispatch({ type: actionTypes.error });
       });
   }
-  
+
+
   useEffect(() => {
     if (state.requestState !== requestStates.loading) { return; }
     fetchReposApi();

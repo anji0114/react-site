@@ -1,6 +1,7 @@
 import { Circle } from 'react-circle';
-import { requestStates } from '../constants';
-import { useSkills } from '../customHooks/useSkills';
+import { requestStates } from '../../constants';
+import { useSkills } from '../../customHooks/useSkills';
+import classes from './Skills.module.scss';
 
 
 
@@ -9,26 +10,28 @@ export const Skills = () => {
 
 
   return (
-    <div id="skills">
-      <div className="container">
-        <div className="heading">
-          <h2>Skills</h2>
-
+    <div className={classes.skills}>
+      <div className={classes.container}>
+        <div className={classes.heading}>
+          <h2>LANGUAGE</h2>
         </div>
-        <div className="skills-container">
+        <div className={classes.grid}>
           {
             fetchRequestState === requestStates.loading && (
-              <p className="description">取得中...</p>
+              <p className={classes.description}>取得中...</p>
             )
           }
           {
             fetchRequestState === requestStates.success && (
               sortedLanguageList().map((item, index) => (
-                <div className='skill-item' key={index}>
-                  <p className="description"><strong>{item.language}</strong></p>
+                <div className={classes.item} key={index}>
+                  <p className={classes.description}><strong>{item.language}</strong></p>
                   <Circle
                     animate
                     progress={converseCountToPercentage(item.count)}
+                    progressColor="#555"
+                    textColor="#555" 
+                    roundedStroke={true}
                   />
                 </div>
               ))
@@ -36,7 +39,7 @@ export const Skills = () => {
           }
           {
             fetchRequestState === requestStates.error && (
-              <p className="description">エラーが発生しました</p>
+              <p className={classes.description}>エラーが発生しました</p>
             )
           }
         </div>
